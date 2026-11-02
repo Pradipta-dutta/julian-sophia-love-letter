@@ -281,9 +281,9 @@ export function RsvpForm() {
                 value={form.fullName}
                 onChange={onTextChange("fullName")}
                 placeholder="Your full name"
-                className={cn(inputClass, errors.fullName && "border-destructive")}
+                className={cn(inputClass, errors["fullName"] && "border-destructive")}
               />
-              {errors.fullName && <p className={errorClass}>{errors.fullName}</p>}
+              {errors["fullName"] && <p className={errorClass}>{errors["fullName"]}</p>}
             </div>
 
             {/* Email */}
@@ -299,9 +299,9 @@ export function RsvpForm() {
                 value={form.email}
                 onChange={onTextChange("email")}
                 placeholder="you@example.com"
-                className={cn(inputClass, errors.email && "border-destructive")}
+                className={cn(inputClass, errors["email"] && "border-destructive")}
               />
-              {errors.email && <p className={errorClass}>{errors.email}</p>}
+              {errors["email"] && <p className={errorClass}>{errors["email"]}</p>}
             </div>
 
             {/* Attendance */}
@@ -346,7 +346,7 @@ export function RsvpForm() {
                   );
                 })}
               </div>
-              {errors.attendance && <p className={errorClass}>{errors.attendance}</p>}
+              {errors["attendance"] && <p className={errorClass}>{errors["attendance"]}</p>}
             </fieldset>
 
             {/* Guest count */}
@@ -381,10 +381,10 @@ export function RsvpForm() {
                   value={form.plusOneNames}
                   onChange={onTextChange("plusOneNames")}
                   placeholder="List each additional guest's full name"
-                  className={cn(inputClass, "resize-none", errors.plusOneNames && "border-destructive")}
+                  className={cn(inputClass, "resize-none", errors["plusOneNames"] && "border-destructive")}
                 />
-                {errors.plusOneNames && (
-                  <p className={errorClass}>{errors.plusOneNames}</p>
+                {errors["plusOneNames"] && (
+                  <p className={errorClass}>{errors["plusOneNames"]}</p>
                 )}
               </div>
             )}
@@ -429,11 +429,11 @@ export function RsvpForm() {
                         placeholder="Please describe your dietary requirement"
                         className={cn(
                           inputClass,
-                          errors.dietaryOther && "border-destructive",
+                          errors["dietaryOther"] && "border-destructive",
                         )}
                       />
-                      {errors.dietaryOther && (
-                        <p className={errorClass}>{errors.dietaryOther}</p>
+                      {errors["dietaryOther"] && (
+                        <p className={errorClass}>{errors["dietaryOther"]}</p>
                       )}
                     </div>
                   )}

@@ -23,7 +23,7 @@ export function EventDetails() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {EVENTS.map((event, index) => {
-            const Icon = ICONS[index % ICONS.length];
+            const Icon = ICONS[index % ICONS.length] ?? Flower2;
             const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.mapQuery)}`;
             return (
               <Reveal key={event.name} delay={index * 150}>
