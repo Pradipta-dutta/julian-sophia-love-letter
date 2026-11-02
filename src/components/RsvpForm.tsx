@@ -222,9 +222,9 @@ export function RsvpForm() {
           ? v.plusOneNames.trim()
           : null,
       dietaryRequirements: isAccepting
-        ? (v.dietary ?? []).filter(
-            (d) => !((d === "other" && v.dietaryOther?.trim()) || d === "other"),
-          )
+        ? (v.dietary ?? [])
+            .filter((d) => d !== "other") // "Other" is captured separately
+            .map((d) => DIETARY_OPTIONS.find((o) => o.value === d)?.label ?? d)
         : [],
       dietaryOther: isAccepting && v.dietaryOther?.trim() ? v.dietaryOther.trim() : null,
       songRequest: isAccepting && v.songRequest?.trim() ? v.songRequest.trim() : null,
